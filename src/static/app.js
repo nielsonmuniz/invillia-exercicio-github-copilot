@@ -20,11 +20,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const spotsLeft = details.max_participants - details.participants.length;
 
+        // Lista de participantes inscritos com bloco visual e ícone
+        let participantsHtml = "";
+        if (details.participants.length > 0) {
+          participantsHtml = `
+            <div class="participants-block">
+              <p>👥 Inscritos:</p>
+              <ul>
+                ${details.participants.map(email => `<li>${email}</li>`).join("")}
+              </ul>
+            </div>
+          `;
+        } else {
+          participantsHtml = `
+            <div class="participants-block">
+              <p>👥 Inscritos:</p>
+              <em>Nenhum participante inscrito ainda.</em>
+            </div>
+          `;
+        }
+
         activityCard.innerHTML = `
           <h4>${name}</h4>
           <p>${details.description}</p>
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
+          ${participantsHtml}
         `;
 
         activitiesList.appendChild(activityCard);
