@@ -65,13 +65,26 @@ section h3 {
   background-color: #f9f9f9;
 }
 
-.activity-card h4 {
-  margin-bottom: 10px;
-  color: #0066cc;
+/* Estilo para a seção de inscritos */
+.activity-card p strong {
+  color: #388e3c;
 }
 
-.activity-card p {
-  margin-bottom: 8px;
+.activity-card ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.activity-card ul li {
+  margin-bottom: 2px;
+  font-size: 15px;
+  color: #333;
+}
+
+.activity-card em {
+  color: #888;
+  font-size: 14px;
 }
 
 .form-group {
